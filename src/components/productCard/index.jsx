@@ -13,7 +13,8 @@ function ProductCard({ product }) {
         width: "386px",
         height: "393px",
         borderRadius: 4,
-        boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
+        boxShadow: "none",
+        border: "1px solid rgba(0,0,0,0.1)",
         p: 2,
         display: "flex",
         flexDirection: "column",
@@ -30,14 +31,21 @@ function ProductCard({ product }) {
         component="img"
         image={product.image}
         alt={product.name}
-        sx={{ height: 220, objectFit: "contain" }}
+        sx={{ height: 200, width: 293, objectFit: "contain", mx: "auto" }}
       />
-      <CardContent sx={{ p: 0 }}>
+      <CardContent sx={{ p: 0, width: 293, mx: "auto" }}>
         <Typography
-          sx={{ fontSize: 14, fontWeight: 500, mb: 2, lineHeight: 1.4 }}
+          sx={{
+            fontSize: 24,
+            fontWeight: 500,
+            mb: 2,
+            lineHeight: 1.4,
+            width: 274,
+          }}
         >
           {product.name}
         </Typography>
+
         <Box
           sx={{
             display: "flex",
@@ -48,7 +56,7 @@ function ProductCard({ product }) {
           <Box>
             <Typography
               sx={{
-                fontSize: 10,
+                fontSize: 14,
                 color: "rgba(0,0,0,0.4)",
                 textTransform: "uppercase",
                 letterSpacing: 1,
@@ -56,7 +64,7 @@ function ProductCard({ product }) {
             >
               цена:
             </Typography>
-            <Typography sx={{ fontWeight: 700, fontSize: 18 }}>
+            <Typography sx={{ fontWeight: 700, fontSize: 24 }}>
               {product.price} €
             </Typography>
           </Box>
