@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -5,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
+import CheckIcon from "@mui/icons-material/Check";
+import { CartContext } from "../../context";
 
 function ProductCard({ product }) {
+  const { cartData, addToCart } = useContext(CartContext);
+  const inCart = cartData.some((item) => item.name === product.name);
+
   return (
     <Card
       sx={{
@@ -23,7 +29,7 @@ function ProductCard({ product }) {
         transition: "box-shadow 0.25s, transform 0.25s",
         "&:hover": {
           boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-          transform: "translateY(-4px)",
+          transform: "translateY(-1px)",
         },
       }}
     >
@@ -45,7 +51,6 @@ function ProductCard({ product }) {
         >
           {product.name}
         </Typography>
-
         <Box
           sx={{
             display: "flex",
@@ -70,14 +75,21 @@ function ProductCard({ product }) {
           </Box>
           <IconButton
             size="small"
+            onClick={() => addToCart(product)}
             sx={{
               border: "1px solid rgba(0,0,0,0.15)",
               width: 32,
               height: 32,
+              backgroundColor: inCart ? "#000" : "transparent",
+              color: inCart ? "#fff" : "inherit",
               "&:hover": { backgroundColor: "#000", color: "#fff" },
             }}
           >
-            <AddIcon sx={{ fontSize: 18 }} />
+            {inCart ? (
+              <CheckIcon sx={{ fontSize: 18 }} />
+            ) : (
+              <AddIcon sx={{ fontSize: 18 }} />
+            )}
           </IconButton>
         </Box>
       </CardContent>

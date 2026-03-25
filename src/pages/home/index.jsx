@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   return (
     <Container maxWidth={false} sx={{ maxWidth: "1420px", py: 4 }}>
@@ -27,11 +27,9 @@ function Home() {
           display: "block",
         }}
       />
-
       <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
         Товары
       </Typography>
-
       <Box
         sx={{
           display: "flex",

@@ -17,7 +17,7 @@ const pages = [
   { label: "Контакты", path: "/contacts" },
 ];
 
-function ResponsiveAppBar() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -30,8 +30,11 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#3a3a3a" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container maxWidth="xl" sx={{ height: 110 }}>
+        <Toolbar
+          disableGutters
+          sx={{ height: "100%", justifyContent: "space-between" }}
+        >
           <Typography
             variant="h6"
             noWrap
@@ -41,6 +44,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontWeight: 700,
+              fontSize: 20,
               color: "inherit",
               textDecoration: "none",
             }}
@@ -94,6 +98,7 @@ function ResponsiveAppBar() {
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontWeight: 700,
+              fontSize: 20,
               color: "inherit",
               textDecoration: "none",
             }}
@@ -117,6 +122,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
+                  fontSize: 15,
                   color: "rgba(255,255,255,0.7)",
                   display: "block",
                   "&.active": {
@@ -138,4 +144,4 @@ function ResponsiveAppBar() {
   );
 }
 
-export default ResponsiveAppBar;
+export default Header;

@@ -10,7 +10,16 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
   return (
-    <Box component="footer" sx={{ backgroundColor: "#3a3a3a", mt: "auto" }}>
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "#3a3a3a",
+        mt: "auto",
+        height: 347,
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Container maxWidth="xl" sx={{ py: 4 }}>
         <Box
           sx={{
@@ -21,26 +30,28 @@ function Footer() {
           }}
         >
           <Box>
-            <Typography sx={{ color: "#fff", fontWeight: 700, mb: 1 }}>
+            <Typography
+              sx={{ color: "#fff", fontWeight: 700, fontSize: 24, mb: 1 }}
+            >
               Контакты
             </Typography>
-            <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>
+            <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: 18 }}>
               8 800 000 00 00
             </Typography>
-            <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>
+            <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: 18 }}>
               email@example@email.com
             </Typography>
           </Box>
 
           <Box>
             <IconButton sx={{ color: "#fff" }}>
-              <FacebookIcon />
+              <FacebookIcon sx={{ fontSize: 32 }} />
             </IconButton>
             <IconButton sx={{ color: "#fff" }}>
-              <TwitterIcon />
+              <TwitterIcon sx={{ fontSize: 32 }} />
             </IconButton>
             <IconButton sx={{ color: "#fff" }}>
-              <InstagramIcon />
+              <InstagramIcon sx={{ fontSize: 32 }} />
             </IconButton>
           </Box>
         </Box>
@@ -52,7 +63,7 @@ function Footer() {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>
+          <Typography sx={{ color: "rgba(255,255,255,0.4)", fontSize: 20 }}>
             2024 Сникер-магазин. Все права защищены
           </Typography>
 
@@ -64,7 +75,7 @@ function Footer() {
           >
             <InputBase
               placeholder="Введите свой email:"
-              sx={{ color: "rgba(255,255,255,0.5)", fontSize: 13, width: 200 }}
+              sx={{ color: "rgba(255,255,255,0.5)", fontSize: 20, width: 200 }}
             />
           </Box>
         </Box>
