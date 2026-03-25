@@ -4,6 +4,7 @@ import ResponsiveAppBar from "./components/header";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import Contacts from "./pages/contacts";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
